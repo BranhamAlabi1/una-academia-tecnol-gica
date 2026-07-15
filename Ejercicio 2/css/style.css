@@ -1,0 +1,42 @@
+:root {
+  --bg-soft: #f5f7ff;
+  --accent: #4f46e5;
+  --accent-dark: #372fb4;
+}
+
+body {
+  background: linear-gradient(135deg, #f8faff 0%, var(--bg-soft) 100%);
+  min-height: 100vh;
+  color: #1f2937;
+}
+
+.hero-card {
+  background: linear-gradient(120deg, #ffffff 0%, #eef2ff 100%);
+  border: 1px solid rgba(79, 70, 229, 0.1);
+}
+
+.card, .table, .list-group-item, .modal-content, .offcanvas {
+  border-radius: 1rem !important;
+}
+
+.table thead {
+  background-color: #f8f9ff;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9ff;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.badge {
+  font-weight: 600;
+}
