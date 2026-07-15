@@ -1,0 +1,450 @@
+:root {
+    --primary: #000;
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --text: #000;
+    --muted: #888;
+    --border: #e0e0e0;
+}
+
+/* Minimal base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Loader */
+#contenedor-carga {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 99999;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #f0f0f0;
+    border-top-color: var(--text);
+    animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.ocultar {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Navbar - ultra minimal */
+.navbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem !important;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 1.25rem;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+}
+
+/* Typography */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.8rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+p {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+/* Carousel - minimal */
+.carousel {
+    border-radius: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    margin: 0 4px;
+}
+
+.carousel-indicators .active {
+    background: var(--text);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+/* Cards - clean and minimal */
+.card {
+    border: 1px solid var(--border);
+    border-radius: 0;
+    background: var(--surface);
+    margin-bottom: 0;
+    box-shadow: none;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card .card-title {
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Table - minimal */
+.table {
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.table thead {
+    background: #f5f5f5;
+    border-bottom: 2px solid var(--border);
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    font-weight: 500;
+}
+
+.table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+.table-responsive {
+    border: 1px solid var(--border);
+    border-radius: 0;
+}
+
+/* Card header */
+.card-header {
+    background: #f5f5f5 !important;
+    border-bottom: 1px solid var(--border) !important;
+    padding: 1.5rem !important;
+}
+
+/* Form - clean */
+form#contactForm {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: 0;
+    border: 1px solid var(--border);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border: 1px solid var(--border);
+    border-radius: 0;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background: var(--surface);
+    color: var(--text);
+}
+
+.form-control:focus {
+    border-color: var(--text);
+    box-shadow: none;
+    outline: none;
+}
+
+.form-check-input {
+    border-radius: 0;
+    border: 1px solid var(--border);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--text);
+}
+
+.form-check-input:checked {
+    background-color: var(--text);
+    border-color: var(--text);
+}
+
+#formMessage {
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Buttons - minimal */
+.btn-primary {
+    background: var(--text);
+    border-color: var(--text);
+    border-radius: 0;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #333;
+    border-color: #333;
+}
+
+/* Accordion */
+.accordion {
+    border: 1px solid var(--border);
+    border-radius: 0;
+}
+
+.accordion-button {
+    background: var(--surface);
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    box-shadow: none;
+    font-weight: 500;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #f5f5f5;
+    color: var(--text);
+    box-shadow: none;
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+/* Footer */
+footer {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: #f5f5f5;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--muted);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Spacing */
+section {
+    padding: 2rem 0;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/* Dark theme - minimal */
+html[data-bs-theme="dark"] {
+    --primary: #fff;
+    --bg: #1a1a1a;
+    --surface: #242424;
+    --text: #fff;
+    --muted: #999;
+    --border: #333;
+}
+
+html[data-bs-theme="dark"] body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+html[data-bs-theme="dark"] .navbar {
+    background: var(--surface);
+    border-bottom-color: var(--border);
+}
+
+html[data-bs-theme="dark"] .card {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+html[data-bs-theme="dark"] .table thead {
+    background: #333;
+}
+
+html[data-bs-theme="dark"] .table th,
+html[data-bs-theme="dark"] .table td {
+    border-bottom-color: var(--border);
+}
+
+html[data-bs-theme="dark"] .table tbody tr:hover {
+    background: #333;
+}
+
+html[data-bs-theme="dark"] .form-control,
+html[data-bs-theme="dark"] .form-check-input {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+    accent-color: var(--bg);
+}
+
+html[data-bs-theme="dark"] .form-check-input:checked {
+    background-color: var(--text);
+    border-color: var(--text);
+    accent-color: var(--bg);
+}
+
+html[data-bs-theme="dark"] .form-check-label {
+    color: var(--text);
+}
+
+html[data-bs-theme="dark"] .accordion {
+    border-color: var(--border);
+}
+
+html[data-bs-theme="dark"] .accordion-button {
+    background: var(--surface);
+    color: var(--text);
+    border-bottom-color: var(--border);
+}
+
+html[data-bs-theme="dark"] .accordion-button:not(.collapsed) {
+    background: #333;
+}
+
+html[data-bs-theme="dark"] footer {
+    background: var(--surface);
+    border-top-color: var(--border);
+}
+
+html[data-bs-theme="dark"] .card-header {
+    background: #333 !important;
+}
+
+html[data-bs-theme="dark"] .btn-primary {
+    background: var(--text);
+    border-color: var(--text);
+    color: var(--bg);
+}
+
+html[data-bs-theme="dark"] .btn-primary:hover {
+    background: #e0e0e0;
+    border-color: #e0e0e0;
+    color: var(--bg);
+}
+
+html[data-bs-theme="dark"] .spinner {
+    border-top-color: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 250px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    section {
+        padding: 1.5rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-img-top {
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 0.8rem;
+    }
+
+    .carousel-item img {
+        height: 200px;
+    }
+}
